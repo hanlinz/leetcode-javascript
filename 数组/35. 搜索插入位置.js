@@ -15,11 +15,15 @@ var searchInsert = function (nums, target) {
     }
     for (let i = 0; i < length; i++) {
         if (target > nums[i]) {
-            if (target > nums[length - i - 1]) {
-                i = length - i - 1;
-                continue;
-            } else if (target == nums[length - i - 1]) {
-                return length - i - 1;
+            if(i < nums.length / 2) {
+                if (target > nums[length - i - 1]) {
+                    i = length - i - 1;
+                    continue;
+                } else if (target == nums[length - i - 1]) {
+                    return length - i - 1;
+                } else {
+                    continue;
+                }
             } else {
                 continue;
             }
